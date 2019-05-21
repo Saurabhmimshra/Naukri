@@ -10,8 +10,10 @@ class Candidate extends CI_Model {
      	parent:: __construct();
     }
 
-    public function validate(){
-
+    public function can_login($email, $password){
+    	$arr['email'] = $email;
+    	$arr['password'] = $password;
+    	return $this->db->get_where('candidate',$arr)->row();
     }
 
     public function insert($data){

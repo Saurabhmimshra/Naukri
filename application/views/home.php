@@ -11,15 +11,27 @@
 		    	<h1>Candidate Login</h1>
 		    	<br><br>
 
-		    	<div class="formclass">
-		    		<form  action="/action_page.php">
+		      	<div class="formclass">
+		     <?php
+                if($this->session->flashdata('message'))
+                {
+                    echo '
+                    <div class="alert alert-danger">
+                        '.$this->session->flashdata("message").'
+                    </div>
+                    ';
+                }
+    		?>
+		    		<?= form_open('home/login'); ?>
 					  <div class="form-group">
 					    <label for="email">Email address:</label>
-					    <input type="email" class="form-control" id="email" placeholder="Email">
+					    <input type="email" name="email" class="form-control" value="<?= set_value('email'); ?>" id="email" placeholder="Email">
+					    <span class="text-danger"><?= form_error('email'); ?></span>
 					  </div>
 					  <div class="form-group">
 					    <label for="pwd">Password:</label>
-					    <input type="password" class="form-control" id="pwd" placeholder="Password">
+					    <input type="password" class="form-control" name="password" id="pwd" value="<?= set_value('password'); ?>" placeholder="Password">
+					    <span class="text-danger"><?= form_error('password'); ?></span>
 					  </div>
 					  <div class="checkbox">
 					    <!-- <label><input type="checkbox"> Remember me</label> -->

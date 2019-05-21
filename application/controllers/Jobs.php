@@ -3,6 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Jobs extends CI_Controller {
 
+	public function __construct(){
+		parent::__construct();
+
+		if(!$this->session->userdata('id'))
+			redirect('home');
+	}
+
 	public function index(){
 
 		$this->load->helper('html');
@@ -23,5 +30,9 @@ class Jobs extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
-	
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect('home');
+	}
+
 }

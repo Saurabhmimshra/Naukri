@@ -5,6 +5,10 @@ class Register extends CI_Controller {
 
 	public function __construct(){
 			parent:: __construct();
+
+			if($this->session->userdata('id'))
+				redirect('jobs');
+
 			$this->load->library('form_validation');
 			$this->load->helper('form');
 			$this->load->model('candidate');
@@ -53,9 +57,7 @@ class Register extends CI_Controller {
 	    }
 	    else
 	    {
-	        $this->load->view('templates/header');
-	        $this->load->view('cdregister');
-	        $this->load->view('templates/footer');
+	        $this->candidate();
 	    }
 
 	}
