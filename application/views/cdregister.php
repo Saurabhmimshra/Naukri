@@ -9,13 +9,13 @@
                 {
                     echo '
                     <div class="alert alert-success">
-                        '.$this->session->flashdata("message").' You can login <a href="'. base_url() .'">here</a>.
+                        '.$this->session->flashdata("message").' You can login <a href="'. base_url().'candidate' .'">here</a>.
                     </div>
                     ';
                 }
     ?>
 
-    <?= form_open('register/create_candidate'); ?>
+    <?= form_open('candidate/create_candidate'); ?>
     
     <div class="form-group">
       <label for="email">Email address:</label>
@@ -52,5 +52,5 @@
     <br><br>
   </form>
 
-  <a href="<?= base_url() ; ?>">Already Registered !</a>
+  <a href="<?= base_url().'candidate' ; ?>">Already Registered !</a>
 </div>

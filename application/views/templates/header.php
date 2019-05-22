@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title><?= $title; ?></title>
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,8 +28,8 @@
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav">
 	        <li class="active"><a href="<?= base_url() ; ?>">Home</a></li>
-	        <li><a href="">Candidate Zone</a></li>
-	        <li><a href="#">Recruiter Zone</a></li>
+	        <li><a href="<?= base_url().'candidate' ?>">Candidate Zone</a></li>
+	        <li><a href="<?= base_url().'recruiter' ?>">Recruiter Zone</a></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 	        <!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
