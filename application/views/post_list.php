@@ -1,17 +1,26 @@
 
+<style type="text/css">
+	.jobpanel{
+		width:70%; 
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.ptitle{
+		text-align: center;
+	}
+
+	.btcr{
+		text-align: right;
+	}
+
+</style>
+
 <div class="container">
 	
 	<div class="jobpanel">
 		<h1><?= $heading; ?></h1>
 		<br><br>
-
-<?
-	if($this->session->flashdata('message')){
-		echo '<div class="alert alert-success">
-			'.$this->session->flashdata('message').'	
-		</div>';
-	}
-?>
 
 <? foreach ($posts as $row) {
 	
@@ -36,10 +45,10 @@
 		  				<p><em><strong>Skills: </strong></em><?= $row['skills'] ;?></p>
 		  				<p><em><strong>Required Experience: </strong></em><?= $row['experience']; ?></p>
 		  				<!-- <button type="button" class="btn btn-primary">Primary</button> -->
-		  				<div class="btcr">
-		  					<!-- <a href="#"><button type="button" class="btn btn-default">Details</button></a> -->
-		  					<a href="<?= base_url().'applications/apply/'. $row['id']; ?>"><button type="button" class="btn btn-primary">Apply</button></a>
-		  				</div>
+		  				<!-- <div class="btcr">
+		  					<a href="#"><button type="button" class="btn btn-default">Details</button></a>
+		  					<a href="#"><button type="button" class="btn btn-primary">Apply</button></a>
+		  				</div> -->
 		  			</div>
 
 		  		</div>
