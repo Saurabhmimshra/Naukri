@@ -29,7 +29,7 @@
 	      <ul class="nav navbar-nav">
 	        <li class="active"><a href="<?= base_url().'pvtrec/myposts' ; ?>">My Posts</a></li>
 	        <li><a href="<?= base_url().'pvtrec/newpost' ?>">New Post</a></li>
-	        <li><a href="<?= base_url().'recruiter/profile' ?>">Profile</a></li>
+	        <!-- <li><a href="<?= base_url().'recruiter/profile' ?>">Profile</a></li> -->
 	        <li><a href="<?= base_url().'logout' ?>">Logout</a></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">

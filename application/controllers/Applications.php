@@ -22,7 +22,9 @@ class Applications extends CI_Controller {
 
 		$data = array(
 			'heading' => 'My Applications',
-			'posts' => $result
+			'posts' => $result,
+			'path' => 'applications/details/',
+			'button_name' => 'View Details'
 		);
 
 		$result = $this->candidate_model->get_by_id($this->session->userdata('candidate_id'));
@@ -35,15 +37,11 @@ class Applications extends CI_Controller {
 
 	public function apply($id = ''){
 
-		if($id == ''){
-
-		}
-		
-
 		$data = array(
 			'user_id' => $this->session->userdata('candidate_id'),
 			'job_id' => $id
 		);
+
 
 		$result = $this->applications_model->insert($data);
 		if($result > 0){
@@ -51,5 +49,9 @@ class Applications extends CI_Controller {
 			redirect('');
 		}
 				
+	}
+
+	public function details($job_id){
+		echo $job_id;
 	}
 }

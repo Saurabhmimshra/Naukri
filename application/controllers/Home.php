@@ -39,6 +39,7 @@ class Home extends CI_Controller {
       'posts' => $result 
     );
 
+
     $this->load->view('home',$data);
 		$this->load->view('templates/footer');
 

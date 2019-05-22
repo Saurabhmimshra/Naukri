@@ -29,7 +29,7 @@
 	      <ul class="nav navbar-nav">
 	        <li class="active"><a href="<?= base_url() ; ?>">View Jobs</a></li>
 	        <li><a href="<?= base_url().'applications' ?>">My Applications</a></li>
-	        <li><a href="<?= base_url().'candidate/profile' ?>">Profile</a></li>
+	        <!-- <li><a href="<?= base_url().'candidate/profile' ?>">Profile</a></li> -->
 	        <li><a href="<?= base_url().'logout' ?>">Logout</a></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">

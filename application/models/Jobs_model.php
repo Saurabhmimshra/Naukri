@@ -26,7 +26,7 @@ class Jobs_model extends CI_Model {
     }
 
     public function jobs_by_recruiter($recid){
-        $this->db->select('title, qualifications, experience, location, skills, cname');
+        $this->db->select('jobs.id, title, qualifications, experience, location, skills, cname');
         $this->db->from('jobs');
         $this->db->join('recruiter', 'jobs.recid = recruiter.id','left');
         $this->db->order_by('jobs.id','DESC');

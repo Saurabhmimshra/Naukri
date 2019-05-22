@@ -101,11 +101,21 @@ class Pvtrec extends CI_Controller {
 		$result = $this->jobs_model->jobs_by_recruiter($this->session->userdata('recruiter_id'));
 		$data = array(
 			'heading' => 'My Posts', 
-			'posts' => $result 
+			'posts' => $result,
+			'path' => 'pvtrec/applicants/',
+			'button_name' => 'View Applicants'
 		);
 
 		$this->load->view('post_list',$data);
 	}
 
+	public function applicants($post_id){
+
+		$this->load->model('applications_model');
+		$result = $this->applications_model->candidates_applied_to($post_id);
+
+
+		$this->load->view('applicants', array('candidates' => $result));
+	}
 
 }
