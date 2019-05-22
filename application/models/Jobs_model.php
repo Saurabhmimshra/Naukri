@@ -18,7 +18,7 @@ class Jobs_model extends CI_Model {
     }
 
     public function all_jobs_except_applied($user_id){
-       $sql = 'SELECT * FROM `jobs` JOIN `recruiter` ON `jobs`.`recid` = `recruiter`.`id` WHERE `jobs`.`id` NOT IN (SELECT `job_id` FROM `applications` WHERE `user_id` = '. $user_id.' )';
+       $sql = 'SELECT `jobs`.`id`,`jobs`.`title`, `jobs`.`qualifications`, `jobs`.`experience`, `jobs`.`location`, `jobs`.`skills`, `recruiter`.`cname`  FROM `jobs` JOIN `recruiter` ON `jobs`.`recid` = `recruiter`.`id` WHERE `jobs`.`id` NOT IN (SELECT `job_id` FROM `applications` WHERE `user_id` = '. $user_id.' )';
 
        $result = $this->db->query($sql);
 
