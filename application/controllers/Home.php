@@ -33,12 +33,17 @@ class Home extends CI_Controller {
     
     $this->load->model('jobs_model');
 
-    $result = $this->jobs_model->all_jobs();
+    if($this->session->userdata('candidate_id')){
+      $result = $this->jobs_model->all_jobs_except_applied($this->session->userdata('candidate_id'));
+    }else{
+      $result = $this->jobs_model->all_jobs();
+    }
+
+
     $data = array(
       'heading' => 'View Jobs', 
       'posts' => $result 
     );
-
 
     $this->load->view('home',$data);
 		$this->load->view('templates/footer');

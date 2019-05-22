@@ -6,7 +6,16 @@
 		<h1><?= $heading; ?></h1>
 		<br><br>
 
-<? foreach ($posts as $row) {
+<? 
+	if(empty($posts)){
+?>
+		<div class="alert alert-info">
+			No Applications.
+		</div>
+<?		
+	}else{
+
+ foreach ($posts as $row) {
 	
 ?>
 
@@ -29,10 +38,18 @@
 		  				<p><em><strong>Skills: </strong></em><?= $row['skills'] ;?></p>
 		  				<p><em><strong>Required Experience: </strong></em><?= $row['experience']; ?></p>
 		  				<!-- <button type="button" class="btn btn-primary">Primary</button> -->
-		  				<div class="btcr">
-		  					<!-- <a href="#"><button type="button" class="btn btn-default">Details</button></a> -->
-		  					<a href="<?= base_url().$path.$row['id'] ;?>"><button type="button" class="btn btn-primary"><?= $button_name; ?></button></a>
-		  				</div>
+		  		
+		  			<? if(!empty($path) && !empty($button_name)){ ?>
+
+			  				<div class="btcr">
+			  					<!-- <a href="#"><button type="button" class="btn btn-default">Details</button></a> -->
+			  		
+			  					<a href="<?= base_url().$path.$row['id'] ;?>"><button type="button" class="btn btn-primary"><?= $button_name; ?></button></a>
+
+			  				</div>
+
+		  			<? } ?>
+
 		  			</div>
 
 		  		</div>
@@ -43,6 +60,7 @@
 
 		</div>
 <?
+		}
 	}
 ?>
 

@@ -27,13 +27,13 @@
 	    </div>
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="<?= base_url() ; ?>">View Jobs</a></li>
-	        <li><a href="<?= base_url().'applications' ?>">My Applications</a></li>
+	        <li class="<?=($this->uri->segment(1)=== NULL || $this->uri->segment(1)==='home')?'active':''?>"><a href="<?= base_url() ; ?>">View Jobs</a></li>
+	        <li class="<?=($this->uri->segment(1)==='applications')?'active':''?>" ><a href="<?= base_url().'applications' ?>">My Applications</a></li>
 	        <!-- <li><a href="<?= base_url().'candidate/profile' ?>">Profile</a></li> -->
 	        <li><a href="<?= base_url().'logout' ?>">Logout</a></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="<?= base_url().'candidate/profile' ?>">Hi <?= $name; ?></a></li>
+	        <li class="<?=($this->uri->segment(2)==='profile')?'active':''?>" ><a href="<?= base_url().'candidate/profile' ?>">Hi <?= $name; ?></a></li>
 	      </ul>
 	    </div>
 	  </div>

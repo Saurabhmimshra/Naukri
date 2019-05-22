@@ -27,9 +27,9 @@
 	    </div>
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="<?= base_url() ; ?>">Home</a></li>
-	        <li><a href="<?= base_url().'candidate' ?>">Candidate Zone</a></li>
-	        <li><a href="<?= base_url().'recruiter' ?>">Recruiter Zone</a></li>
+	        <li class="<?=($this->uri->segment(1)=== NULL || $this->uri->segment(1)==='home')?'active':''?>"><a href="<?= base_url() ; ?>">Home</a></li>
+	        <li class="<?=($this->uri->segment(1)==='candidate')?'active':''?>" ><a href="<?= base_url().'candidate' ?>">Candidate Zone</a></li>
+	        <li class="<?=($this->uri->segment(1)==='recruiter')?'active':''?>" ><a href="<?= base_url().'recruiter' ?>">Recruiter Zone</a></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 	        <!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->

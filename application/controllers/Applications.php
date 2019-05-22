@@ -23,8 +23,8 @@ class Applications extends CI_Controller {
 		$data = array(
 			'heading' => 'My Applications',
 			'posts' => $result,
-			'path' => 'applications/details/',
-			'button_name' => 'View Details'
+			'path' => '',
+			'button_name' => ''
 		);
 
 		$result = $this->candidate_model->get_by_id($this->session->userdata('candidate_id'));
@@ -35,7 +35,7 @@ class Applications extends CI_Controller {
 
 	}
 
-	public function apply($id = ''){
+	public function apply($id){
 
 		$data = array(
 			'user_id' => $this->session->userdata('candidate_id'),
@@ -51,7 +51,7 @@ class Applications extends CI_Controller {
 				
 	}
 
-	public function details($job_id){
-		echo $job_id;
-	}
+	// public function details($job_id){
+	// 	echo $job_id;
+	// }
 }

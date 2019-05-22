@@ -11,6 +11,12 @@
 			'.$this->session->flashdata('message').'	
 		</div>';
 	}
+
+	if(empty($posts)){
+		echo '<div class="alert alert-info">
+			No Jobs Available!	
+		</div>';
+	}
 ?>
 
 <? foreach ($posts as $row) {
